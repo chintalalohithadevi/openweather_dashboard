@@ -1,11 +1,33 @@
-# WeatherHub
+# 🌦️ OpenWeather Dashboard
 
-A weather dashboard with a separated frontend and Flask backend.
+A responsive weather dashboard that allows users to check current weather conditions and forecasts for different cities.
 
-## Project structure
+## 🚀 Features
+
+- Search for weather by city.
+- View current weather conditions.
+- View weather forecasts.
+- Responsive frontend interface.
+- Python Flask backend with REST API endpoints.
+- Frontend and backend maintained separately.
+
+## 🛠️ Technologies Used
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
+
+**Backend**
+- Python
+- Flask
+- Flask-CORS
+- OpenWeather API
+
+## 📁 Project Structure
 
 ```text
-weatherhub-separated/
+openweather_dashboard/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
@@ -15,62 +37,102 @@ weatherhub-separated/
 │   ├── requirements.txt
 │   └── run.py
 ├── frontend/
-│   ├── index.html
 │   ├── assets/
-│   │   ├── styles.css
-│   │   └── app.js
+│   │   ├── app.js
+│   │   └── styles.css
+│   ├── index.html
 │   └── README.md
+├── .gitignore
 └── README.md
 ```
 
-## Requirements
+## ⚙️ Setup and Installation
 
-- Python 3.10+
-- A modern browser
-- An OpenWeather API key for live weather data
+### 1. Clone the repository
 
-## 1. Configure the backend
-
-Open a terminal in `backend/`:
-
-**Windows PowerShell**
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-Copy-Item .env.example .env
+```bash
+git clone https://github.com/chintalalohithadevi/openweather_dashboard.git
+cd openweather_dashboard
 ```
 
-Edit `backend/.env` and add your own API key. Never commit `.env`.
+### 2. Create a Python virtual environment
 
-Start the API:
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install backend dependencies
+
+```powershell
+cd backend
+pip install -r requirements.txt
+```
+
+### 4. Configure the API key
+
+Create a `.env` file inside the `backend` directory using `.env.example` as a guide.
+
+Add your own OpenWeather API key:
+
+```env
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+DEFAULT_CITY=Vijayawada
+```
+
+Never commit your real `.env` file or publish your API key.
+
+### 5. Start the backend
+
+From the `backend` directory, run:
 
 ```powershell
 python run.py
 ```
 
-The API runs at `http://127.0.0.1:5000`.
+The backend should be available at:
 
-## 2. Start the frontend
+`http://127.0.0.1:5000`
 
-With the backend running, open another terminal at `frontend/` and run:
+### 6. Start the frontend
+
+Open a second terminal at the project root and run:
 
 ```powershell
+cd frontend
 python -m http.server 5500
 ```
 
-Open `http://127.0.0.1:5500`.
+Open this URL in your browser:
 
-The frontend uses `http://127.0.0.1:5000` as its API base by default. You can change `API_BASE` at the top of `frontend/assets/app.js` if needed.
+`http://127.0.0.1:5500`
 
-## API endpoints
+## 🔌 Backend API Endpoints
 
-- `GET /api/health`
-- `GET /api/weather/current?city=Vijayawada&country=IN`
-- `GET /api/weather/forecast?city=Vijayawada&country=IN`
+| Endpoint                                | Purpose                   |
+| --------------------------------------- | ------------------------- |
+| `/api/health`                           | Check backend health      |
+| `/api/weather/current?city=Vijayawada`  | Retrieve current weather  |
+| `/api/weather/forecast?city=Vijayawada` | Retrieve weather forecast |
 
-## Notes
+## 🔐 Security
 
-- Favourite cities and theme preference are stored in the browser's local storage.
-- Weather is retrieved live from OpenWeather; API key activation, quota, and network availability affect results.
-- The current forecast cards use daily summaries derived from OpenWeather's 3-hour forecast feed.
+- Store your API key in `backend/.env`.
+- Keep `.env` excluded from Git.
+- Use environment variables for secrets.
+- Do not publish private credentials.
+
+## 👨‍💻 Author
+
+**Chintala Lohitha Devi**
+
+GitHub: [chintalalohithadevi](https://github.com/chintalalohithadevi)
+
+## 📄 License
+
+Add a license if you want others to reuse or contribute to this project.
