@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "https://openweather-dashboard.onrender.com";
+const API_BASE = "https://openweather-dashboard.onrender.com";
 
 const $ = (selector) => document.querySelector(selector);
 const statusBox = $("#status");
