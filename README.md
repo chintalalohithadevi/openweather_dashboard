@@ -1,138 +1,70 @@
-# 🌦️ OpenWeather Dashboard
+# WeatherHub – Live Weather Dashboard
 
-A responsive weather dashboard that allows users to check current weather conditions and forecasts for different cities.
+A web-based weather application that provides current weather conditions and a five-day forecast for cities around the world.
 
-## 🚀 Features
+## Live Demo
+https://openweather-dashboard-1.onrender.com/
 
-- Search for weather by city.
-- View current weather conditions.
-- View weather forecasts.
-- Responsive frontend interface.
-- Python Flask backend with REST API endpoints.
-- Frontend and backend maintained separately.
+## Features
+- Search for weather by city and country code
+- View current temperature and weather conditions
+- View a five-day weather forecast
+- Save and manage favourite cities
+- Switch between Celsius and Fahrenheit
+- Toggle dark and light themes
+- Responsive dashboard interface
 
-## 🛠️ Technologies Used
+## Technologies Used
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Python, Flask, Flask-CORS
+- **Weather Data:** OpenWeather API
+- **Deployment:** Render
+- **Version Control:** Git and GitHub
 
-**Frontend**
-- HTML5
-- CSS3
-- JavaScript
-
-**Backend**
-- Python
-- Flask
-- Flask-CORS
-- OpenWeather API
-
-## 📁 Project Structure
-
+## Project Structure
 ```text
 openweather_dashboard/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
 │   │   └── routes.py
-│   ├── .env.example
-│   ├── .gitignore
 │   ├── requirements.txt
-│   └── run.py
+│   ├── run.py
+│   ├── .env.example
+│   └── .env
 ├── frontend/
-│   ├── assets/
-│   │   ├── app.js
-│   │   └── styles.css
 │   ├── index.html
-│   └── README.md
+│   ├── README.md
+│   └── assets/
+│       ├── app.js
+│       └── styles.css
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Setup and Installation
+## Setup Instructions
 
-### 1. Clone the repository
+1. Clone the repository:
+   `git clone https://github.com/chintalalohithadevi/openweather_dashboard.git`
 
-```bash
-git clone https://github.com/chintalalohithadevi/openweather_dashboard.git
-cd openweather_dashboard
-```
+2. Install backend dependencies:
+   `cd openweather_dashboard/backend`
+   `pip install -r requirements.txt`
 
-### 2. Create a Python virtual environment
+3. Create a `.env` file in the backend directory and configure your OpenWeather API key:
+   `OPENWEATHER_API_KEY=your_openweather_api_key_here`
 
-```bash
-python -m venv .venv
-```
+4. Start the backend:
+   `python run.py`
 
-Activate it on Windows PowerShell:
+5. In a separate terminal, serve the frontend:
+   `cd frontend`
+   `python -m http.server 5500`
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
+6. Open `http://127.0.0.1:5500` in your browser.
 
-### 3. Install backend dependencies
+## Security
+Keep API keys private. Never commit your real `.env` file or API credentials to GitHub.
 
-```powershell
-cd backend
-pip install -r requirements.txt
-```
-
-### 4. Configure the API key
-
-Create a `.env` file inside the `backend` directory using `.env.example` as a guide.
-
-Add your own OpenWeather API key:
-
-```env
-OPENWEATHER_API_KEY=your_openweather_api_key_here
-DEFAULT_CITY=Vijayawada
-```
-
-Never commit your real `.env` file or publish your API key.
-
-### 5. Start the backend
-
-From the `backend` directory, run:
-
-```powershell
-python run.py
-```
-
-The backend should be available at:
-
-`http://127.0.0.1:5000`
-
-### 6. Start the frontend
-
-Open a second terminal at the project root and run:
-
-```powershell
-cd frontend
-python -m http.server 5500
-```
-
-Open this URL in your browser:
-
-`http://127.0.0.1:5500`
-
-## 🔌 Backend API Endpoints
-
-| Endpoint                                | Purpose                   |
-| --------------------------------------- | ------------------------- |
-| `/api/health`                           | Check backend health      |
-| `/api/weather/current?city=Vijayawada`  | Retrieve current weather  |
-| `/api/weather/forecast?city=Vijayawada` | Retrieve weather forecast |
-
-## 🔐 Security
-
-- Store your API key in `backend/.env`.
-- Keep `.env` excluded from Git.
-- Use environment variables for secrets.
-- Do not publish private credentials.
-
-## 👨‍💻 Author
-
-**Chintala Lohitha Devi**
-
-GitHub: [chintalalohithadevi](https://github.com/chintalalohithadevi)
-
-## 📄 License
-
-Add a license if you want others to reuse or contribute to this project.
+## Author
+Developer | Python | Flask | Web Development
