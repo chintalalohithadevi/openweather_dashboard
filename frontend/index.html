@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08172d">
+  <meta name="description" content="WeatherHub live weather and forecast dashboard.">
+  <title>WeatherHub — Explore Weather Worldwide</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="WeatherHub home">
+      <span class="brand-icon">🌤️</span>
+      <span><strong>Weather<span>Hub</span></strong><small>Explore Weather Worldwide</small></span>
+    </a>
+    <nav class="nav">
+      <button class="nav-item active" data-section="home">⌂ <span>Home</span></button>
+      <button class="nav-item" data-section="current">☁ <span>Current Weather</span></button>
+      <button class="nav-item" data-section="forecast">▦ <span>5-Day Forecast</span></button>
+      <button class="nav-item" data-section="favourites">♥ <span>Favourite Cities</span></button>
+      <button class="nav-item" data-section="about">ⓘ <span>About</span></button>
+    </nav>
+    <div class="sidebar-art" aria-hidden="true">🌎</div>
+    <p class="tagline">“ Better Weather<br>Better Days ”</p>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <form id="search-form" class="search-form">
+        <span class="pin">⌖</span>
+        <input id="city-input" value="Vijayawada" aria-label="City name" placeholder="Search city" required>
+        <input id="country-input" value="IN" aria-label="Country code" maxlength="2" placeholder="IN">
+        <button class="primary" type="submit">⌕ <span>Search</span></button>
+      </form>
+      <div class="top-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️ <span>☾</span></button>
+        <time id="clock">Loading local time…</time>
+      </div>
+    </header>
+
+    <div id="status" class="status" role="status" aria-live="polite">Loading weather…</div>
+    <div class="dashboard">
+      <section class="main-column">
+        <article class="hero panel">
+          <div class="hero-top">
+            <div>
+              <h1 id="hero-city">Vijayawada, IN</h1>
+              <p class="muted" id="hero-location">Andhra Pradesh, India</p>
+              <p class="muted" id="hero-date">Weather updates</p>
+            </div>
+            <span class="live-pill"><i></i> Live Weather</span>
+          </div>
+          <div class="hero-weather">
+            <div>
+              <div class="temperature"><span id="temperature">--.-</span><sup>°C</sup></div>
+              <h2 id="description">Loading…</h2>
+              <p class="feels">◔ <span>Feels like </span><strong id="feels-like">--.-°C</strong></p>
+            </div>
+            <img id="hero-icon" class="hero-icon" src="https://openweathermap.org/img/wn/01n@4x.png" alt="Weather icon">
+          </div>
+        </article>
+
+        <section class="metrics" aria-label="Weather details">
+          <article class="metric metric-red"><span class="metric-icon">♨</span><p>Feels Like</p><strong id="metric-feels">--.-°C</strong></article>
+          <article class="metric metric-blue"><span class="metric-icon">♧</span><p>Humidity</p><strong id="metric-humidity">--%</strong></article>
+          <article class="metric metric-green"><span class="metric-icon">≋</span><p>Wind Speed</p><strong id="metric-wind">-- m/s</strong></article>
+          <article class="metric metric-purple"><span class="metric-icon">◉</span><p>Pressure</p><strong id="metric-pressure">---- hPa</strong></article>
+          <article class="metric metric-cyan"><span class="metric-icon">◎</span><p>Visibility</p><strong id="metric-visibility">-- km</strong></article>
+        </section>
+
+        <section class="panel forecast-panel" id="forecast-section">
+          <div class="section-heading"><h2>▦ &nbsp; 5-Day Weather Forecast</h2><span class="muted">3-hour data summarized by day</span></div>
+          <div id="forecast-cards" class="forecast-grid">
+            <p class="muted">Forecast will appear here.</p>
+          </div>
+        </section>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel favourites-panel" id="favourites-section">
+          <div class="section-heading"><h2>❤️ Favourite Cities</h2><button id="add-favourite" class="primary small">＋ Add City</button></div>
+          <div id="favourites-list" class="favourites-list"></div>
+          <button id="view-favourites" class="secondary full">View All Favourite Cities →</button>
+        </section>
+        <section class="panel world-panel">
+          <div class="section-heading"><h2>🌐 Weather around the World</h2></div>
+          <div id="world-list" class="world-list"></div>
+        </section>
+        <section class="panel about-panel" id="about-section">
+          <h2>About WeatherHub</h2>
+          <p class="muted">A responsive weather dashboard built with HTML, CSS, JavaScript, Python, Flask, and OpenWeather.</p>
+          <p class="muted">Weather values depend on live API availability and are not safety alerts.</p>
+        </section>
+      </aside>
+    </div>
+    <footer>WeatherHub · Built for learning and portfolio projects · Data by OpenWeather</footer>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>
