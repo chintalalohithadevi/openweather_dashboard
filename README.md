@@ -5,6 +5,13 @@ A web-based weather application that provides current weather conditions and a f
 ## Live Demo
 https://openweather-dashboard-1.onrender.com/
 
+## Screenshots
+
+![WeatherHub Dashboard](screenshots/WeatherHub_dashboard.png)
+
+## Live Demo
+
+https://openweather-dashboard-1.onrender.com/
 ## Features
 - Search for weather by city and country code
 - View current temperature and weather conditions
